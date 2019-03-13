@@ -20,22 +20,8 @@ add_library( # Sets the name of the library.
              src/main/cpp/native-lib.cpp )
 
 # libyuv: https://chromium.googlesource.com/libyuv/libyuv/
-include_directories(src/main/cpp/include)
-set(distribution_DIR ${CMAKE_SOURCE_DIR}/../../../../src/main/jniLibs)
-add_library( # Sets the name of the library.
-             yuv
-
-             # Sets the library as ashared library.
-             SHARED
-
-             # Provides a relative pathto your source file(s).
-             IMPORTED )
-
-set_target_properties(
-            yuv
-            PROPERTIES IMPORTED_LOCATION
-            ../../../../src/main/jniLibs/${ANDROID_ABI}/libyuv.so
-           )
+include_directories( vendor/libyuv/include )
+add_subdirectory( vendor/libyuv )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by

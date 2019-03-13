@@ -5,11 +5,12 @@
 
 extern "C" {
 
-    JNIEXPORT void JNICALL
-    Java_arukoh_nativelib_Libyuv_ARGBToNV21(JNIEnv *env, jobject,
-                                            jbyteArray rgbArray,
-                                            jint width, jint height,
-                                            jbyteArray yuvArray) {
+    JNIEXPORT
+    JNICALL
+    void Java_arukoh_nativelib_Libyuv_ARGBToNV21(JNIEnv *env, jobject,
+                                                 jbyteArray rgbArray,
+                                                 jint width, jint height,
+                                                 jbyteArray yuvArray) {
         jbyte *rgb = env->GetByteArrayElements(rgbArray, NULL);
         jbyte *yuv = env->GetByteArrayElements(yuvArray, NULL);
         libyuv::ARGBToNV21((uint8_t*) rgb, width << 2,

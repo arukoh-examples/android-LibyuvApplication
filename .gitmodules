@@ -1,0 +1,3 @@
+[submodule "libyuv/vendor/libyuv"]
+	path = libyuv/vendor/libyuv
+	url = https://chromium.googlesource.com/libyuv/libyuv
