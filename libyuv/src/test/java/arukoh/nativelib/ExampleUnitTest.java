@@ -1,4 +1,4 @@
-package arukoh.libyuv;
+package arukoh.nativelib;
 
 import org.junit.Test;
 
